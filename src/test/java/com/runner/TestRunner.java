@@ -9,7 +9,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(features = ".\\src\\test\\resources\\Features",
 					glue = {"com.grt","com.policybazaar","com.hooksclass"},
-					tags= "@grt",
+					tags= "@policy",
 					monochrome = true,
 					dryRun = false,
 					plugin= {"json:target/report.json","html:target"}
