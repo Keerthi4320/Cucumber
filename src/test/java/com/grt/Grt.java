@@ -44,10 +44,13 @@ public class Grt{
 		if(utils.isdisplay(grt.getAd()))
 			utils.button(grt.getAd());
 		utils.mouseHover(grt.getAll_Jewellery());
+		System.out.println("before male");
 	}
 
 	@When("User clicks Male option")
 	public void user_clicks_male_option() {
+		if(utils.driver.findElement(By.cssSelector("inner tm-close")).isDisplayed())
+			utils.driver.findElement(By.cssSelector("inner tm-close")).click();
 		utils.button(grt.getMale(), 0);
 	}
 
