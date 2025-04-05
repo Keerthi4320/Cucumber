@@ -49,9 +49,11 @@ public class Grt{
 
 	@When("User clicks Male option")
 	public void user_clicks_male_option() {
-		if(utils.driver.findElement(By.cssSelector("inner tm-close")).isDisplayed())
-			utils.driver.findElement(By.cssSelector("inner tm-close")).click();
+		System.out.println("before");
+		if(utils.driver.findElement(By.xpath("//div[@class='outer']/a")).isDisplayed())
+			utils.driver.findElement(By.xpath("//div[@class='outer']/a")).click();
 		utils.button(grt.getMale(), 0);
+		System.out.println("after");
 	}
 
 	@Then("User validates the menu options")
