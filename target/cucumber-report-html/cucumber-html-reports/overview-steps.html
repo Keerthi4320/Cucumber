@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
+<script type="text/javascript" src="js/Chart.min.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+  
+<title>Cucumber Reports (no 2.0) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+                <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+                <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+    
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+              <th>Number</th>
+            <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>Cucumber</td>
+              <td>2.0</td>
+            <td>28 Mar 2025, 07:22</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+      </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+          <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+      </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+                      <tr>
+              <td class="location">Grt.launch_the_grt_application(String)</td>
+              <td>1</td>
+              <td class="duration" data-value="32750200">0.032</td>
+              <td class="duration" data-value="32750200">0.032</td>
+              <td class="duration" data-value="32750200">0.032</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.mouse_hover_to_all_jewellery_option()</td>
+              <td>1</td>
+              <td class="duration" data-value="1018450000">1.018</td>
+              <td class="duration" data-value="1018450000">1.018</td>
+              <td class="duration" data-value="1018450000">1.018</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.user_clicks_male_option()</td>
+              <td>1</td>
+              <td class="duration" data-value="439522900">0.439</td>
+              <td class="duration" data-value="439522900">0.439</td>
+              <td class="duration" data-value="439522900">0.439</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.user_prints_the_how_many_total_no_of_items_should_display_in_that_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="30293500">0.030</td>
+              <td class="duration" data-value="30293500">0.030</td>
+              <td class="duration" data-value="30293500">0.030</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.user_prints_the_product_name_and_price()</td>
+              <td>1</td>
+              <td class="duration" data-value="13391114700">13.391</td>
+              <td class="duration" data-value="13391114700">13.391</td>
+              <td class="duration" data-value="13391114700">13.391</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.user_validates_that_total_items_are_displaying_in_that_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="67672124100">1:7.672</td>
+              <td class="duration" data-value="67672124100">1:7.672</td>
+              <td class="duration" data-value="67672124100">1:7.672</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.user_validates_the_menu_options()</td>
+              <td>1</td>
+              <td class="duration" data-value="1112313700">1.112</td>
+              <td class="duration" data-value="1112313700">1.112</td>
+              <td class="duration" data-value="1112313700">1.112</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Grt.validate_user_lands_on_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="1666267300">1.666</td>
+              <td class="duration" data-value="1666267300">1.666</td>
+              <td class="duration" data-value="1666267300">1.666</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Hooks.after()</td>
+              <td>4</td>
+              <td class="duration" data-value="969458850">0.969</td>
+              <td class="duration" data-value="969458850">1.004</td>
+              <td class="duration" data-value="3877835400">3.877</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">Hooks.before(Scenario)</td>
+              <td>4</td>
+              <td class="duration" data-value="6855657550">6.855</td>
+              <td class="duration" data-value="6855657550">8.078</td>
+              <td class="duration" data-value="27422630200">27.422</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.Validate_user_lands_on_HomePage()</td>
+              <td>3</td>
+              <td class="duration" data-value="20255133">0.020</td>
+              <td class="duration" data-value="20255133">0.029</td>
+              <td class="duration" data-value="60765400">0.060</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.launch_the_policy_bazaar_application(String)</td>
+              <td>3</td>
+              <td class="duration" data-value="2076944033">2.076</td>
+              <td class="duration" data-value="2076944033">2.302</td>
+              <td class="duration" data-value="6230832100">6.230</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.user_clicks_bike_insurance_option(String)</td>
+              <td>3</td>
+              <td class="duration" data-value="354326233">0.354</td>
+              <td class="duration" data-value="354326233">0.381</td>
+              <td class="duration" data-value="1062978700">1.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.user_clicks_the_view_prices_bike()</td>
+              <td>3</td>
+              <td class="duration" data-value="949944100">0.949</td>
+              <td class="duration" data-value="949944100">1.029</td>
+              <td class="duration" data-value="2849832300">2.849</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.user_giving_bike_details()</td>
+              <td>3</td>
+              <td class="duration" data-value="1464403333">1.464</td>
+              <td class="duration" data-value="1464403333">1.554</td>
+              <td class="duration" data-value="4393210000">4.393</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.user_prints_the_how_many_total_no_of_insurance_companies_present_in_that_web_page()</td>
+              <td>3</td>
+              <td class="duration" data-value="2167383633">2.167</td>
+              <td class="duration" data-value="2167383633">2.475</td>
+              <td class="duration" data-value="6502150900">6.502</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.user_prints_the_insurance_company_and_price()</td>
+              <td>3</td>
+              <td class="duration" data-value="385044233">0.385</td>
+              <td class="duration" data-value="385044233">0.423</td>
+              <td class="duration" data-value="1155132700">1.155</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                      <tr>
+              <td class="location">PolicyBazaar.validate_user_lands_on_bike_insurance_section_page()</td>
+              <td>3</td>
+              <td class="duration" data-value="117211466">0.117</td>
+              <td class="duration" data-value="117211466">0.189</td>
+              <td class="duration" data-value="351634400">0.351</td>
+              <td class="passed">100.00%</td>
+            </tr>
+                  </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>18</td>
+            <td>40</td>
+            <td class="duration">3.481</td>
+            <td class="duration">1:7.672</td>
+            <td class="duration">2:19.269</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
