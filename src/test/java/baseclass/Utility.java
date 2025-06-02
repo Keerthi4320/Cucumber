@@ -1,16 +1,26 @@
 package baseclass;
 
+
+import static io.restassured.RestAssured.given;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
-
+import baseclass.IntUtility;
 import javax.net.ssl.HttpsURLConnection;
 
 import org.apache.commons.io.FileUtils;
@@ -27,6 +37,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.restassured.response.Response;
 
 public class Utility implements IntUtility{
 
@@ -48,6 +59,48 @@ public class Utility implements IntUtility{
 		
 		return utils;
 	}
+	public static Response getHttp(String endPoint, String header,String key, String value,int statusCode) {
+		Response res = given().log().all().headers("Content-type",header).pathParams(key,value).
+		when().get(endPoint).
+		then().log().all().assertThat().statusCode(statusCode).extract().response();
+		return res;
+	}
+	public List<Map<String,String>> sql(){
+		List<Map<String,String>> li = new ArrayList<>();
+	    Map<String,String> mp = new HashMap<>();
+	    Connection conn = null;
+		try {
+			Class.forName("com.mysql.server");
+			String connect = "localhost:9090/username:user/password:pass";
+			try {
+			    conn = DriverManager.getConnection(connect);
+				System.out.println("Database Connected");
+				Statement state = conn.createStatement();
+				ResultSet resultSet = state.executeQuery("Select * from Customers");
+				while(resultSet.next()) {
+					String name = resultSet.getString("username");
+					mp.put("username", name);
+					String id = resultSet.getString(0);
+					mp.put("userid", id);
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		li.add(mp);
+		return li;
+	}
+	
 	public static void browserLaunch() {
 		Properties prop = new Properties();
 		ChromeOptions options = new ChromeOptions();

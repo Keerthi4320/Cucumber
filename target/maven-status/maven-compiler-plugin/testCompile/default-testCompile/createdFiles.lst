@@ -1,8 +1,0 @@
-com\hooksclass\Hooks.class
-com\grt\Grt.class
-com\objectrepository\GrtObj.class
-com\policybazaar\PolicyBazaar.class
-baseclass\IntUtility.class
-com\runner\TestRunner.class
-baseclass\Utility.class
-com\objectrepository\Policy.class
